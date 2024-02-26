@@ -1,0 +1,41 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void Sort_Array(vector<int>&arr,int n){
+    int start=0;
+    int mid=0;
+    int end=n-1;
+    while(mid<=end){
+        if(arr[mid]==0){
+            swap(arr[mid],arr[start]);
+            start++;
+            mid++;
+        }
+        else if(arr[mid]==1){
+            mid++;
+        }
+        else{
+            swap(arr[mid],arr[end]);
+            end--;
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[i];
+    }
+    
+    
+}
+
+int main() {
+    int n;
+    cout<<"Enter array size   :";
+    cin>>n;
+    vector<int>arr(n-1);
+    
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    Sort_Array(arr,n);
+    return 0;
+}
